@@ -1,15 +1,8 @@
-# React-Codelab-Project
+# React-Epress-Project
 
 ## About
 
-React-Codelab-Project is a Single-page infinite-scrolling public memo app implemented using React.js, Redux, Express.js and MongoDB.
-
-## Features
-- Authentication (Sign Up / Sign In)
-- Memo Creation / Manipulation (edit, delete, star)
-- User Search
-
-Preview: https://memo.vlpt.us/
+React.js, Redux, Express.js and MongoDB.
 
 ## Following technologies are used
 - axios
@@ -30,7 +23,6 @@ Preview: https://memo.vlpt.us/
 - style-loader
 - css-loader
 
-
 ## Prerequisites
 MongoDB and NodeJS should be installed
 
@@ -47,5 +39,3 @@ npm install
 - `npm run development` Start server in development environment
 
 Express server runs on port 3000, and development server runs on port 4000.
-
-Tutorial on this project (in Korean): https://velopert.com/tag/reactcodelab
