@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class Header extends React.Component {
     render() {
@@ -6,14 +7,16 @@ class Header extends React.Component {
         const loginButton = (
             <li>
                 <a>
-                    <i className="material-icons">vpn_key</i>
+                    <Link to="/login">
+                        <i className="material-icons">vpn_key</i>
+                    </Link>
                 </a>
             </li>
         );
 
         const logoutButton = (
             <li>
-                <a>
+                <a onClick={this.props.onLogout}>
                     <i className="material-icons">lock_open</i>
                 </a>
             </li>
@@ -22,7 +25,7 @@ class Header extends React.Component {
         return (
             <nav>
                 <div className="nav-wrapper blue darken-1">
-                    <a className="brand-logo center">GENIEPAD</a>
+                    <Link to="/" className="brand-logo center">GENIEPAD</Link>
 
                     <ul>
                         <li><a><i className="material-icons">search</i></a></li>
