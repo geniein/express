@@ -1,5 +1,5 @@
 {
-  "name": "codelab",
+  "name": "genielab",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -8,9 +8,9 @@
     "start": "cross-env NODE_ENV=production node ./build/main.js",
     "development": "cross-env NODE_ENV=development nodemon --exec babel-node --presets=es2015 ./server/main.js --watch server"
   },
-  "author": "",
+  "author": "ingenie",
   "license": "ISC",
-  "description": "",
+  "description": "memo",
   "dependencies": {
     "axios": "^0.13.1",
     "babel-polyfill": "^6.9.1",
