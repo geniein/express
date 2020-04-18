@@ -57,7 +57,7 @@ export function registerRequest(username, password) {
     return (dispatch) => {
         // Inform Register API is starting
         dispatch(register());
-
+        
         return axios.post('/api/account/signup', { username, password })
         .then((response) => {
             dispatch(registerSuccess());

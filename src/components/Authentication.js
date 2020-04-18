@@ -70,7 +70,10 @@ class Authentication extends React.Component {
                     <input
                     name="username"
                     type="text"
-                    className="validate"/>
+                    className="validate"
+                    value={this.state.username}
+                    onChange={this.handleChange}
+                    />
                 </div>
                 <div className="input-field col s12">
                     <label>Password</label>
@@ -90,7 +93,7 @@ class Authentication extends React.Component {
                 <div className="card-content">
                     <div className="row">
                         {inputBoxes}
-                        <a className="waves-effect waves-light btn">SUBMIT</a>
+                        <a onClick={this.handleLogin} className="waves-effect waves-light btn">SUBMIT</a>
                     </div>
                 </div>
 
@@ -110,7 +113,7 @@ class Authentication extends React.Component {
             <div className="card-content">
                 <div className="row">
                     {inputBoxes}
-                    <a className="waves-effect waves-light btn">CREATE</a>
+                    <a onClick={this.handleRegister} className="waves-effect waves-light btn">CREATE</a>
                 </div>
             </div>
         );

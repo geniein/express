@@ -12,20 +12,20 @@ const router = express.Router();
         3: USERNAM EXISTS
 */
 
-router.post('signup', (req,res)=> {
+router.post('/signup', (req,res)=> {    
     // CHECK USERNAME FORMAT
     let usernameRegex = /^[a-z0-9]+$/;
-
+    console.log(req.body.username);
     if(!usernameRegex.test(req.body.username)){
-        return res.status(400).json({
+        return res.status(401).json({
             error: "BAD USERNAME",
             code: 1
         });
     }
-
+    
     // CHECK PASS LENGTH
     if(req.body.password.length < 4 || typeof req.body.password !== "string"){
-        return res.status(400).json({
+        return res.status(402).json({
             error: "BAD PASSWORD",
             code: 2
         });
@@ -35,9 +35,9 @@ router.post('signup', (req,res)=> {
     Account.findOne({ username: req.body.username}, (err, exists) => {
         if(err) throw err;
         if(exists){
-            return res.status(400).json({
+            return res.status(403).json({
                 error: "USERNAME EXISTS",
-                code: 1
+                code: 3
             });
         }
 
@@ -55,7 +55,6 @@ router.post('signup', (req,res)=> {
             return res.json({ success: true});
         });
     })
-    res.json({success: true});    
 });
 
 /*
@@ -64,7 +63,7 @@ router.post('signup', (req,res)=> {
     ERROR CODES:
         1: LOGIN FAILED
 */
-router.post('signin', (req, res) =>{
+router.post('/signin', (req, res) =>{
 
     if(typeof req.body.password !== "string") {
         return res.status(401).json({
@@ -109,7 +108,7 @@ router.post('signin', (req, res) =>{
 /*
     GET CURRENT USER INFO GET /api/account/getInfo
 */
-router.get('getinfo', (req, res) =>{
+router.get('/getinfo', (req, res) =>{
     if(typeof req.session.loginInfo === "undefined") {
         return res.status(401).json({
             error: 1
@@ -121,7 +120,7 @@ router.get('getinfo', (req, res) =>{
 /*
     LOGOUT: POST /api/account/logout
 */
-router.post('logout', (req, res) =>{
+router.post('/logout', (req, res) =>{
     req.session.destroy(err => { if(err) throw err; });
     return res.json({success : true});
 });
