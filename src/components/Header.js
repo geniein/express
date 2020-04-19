@@ -6,11 +6,9 @@ class Header extends React.Component {
 
         const loginButton = (
             <li>
-                <a>
                     <Link to="/login">
                         <i className="material-icons">vpn_key</i>
                     </Link>
-                </a>
             </li>
         );
 
@@ -44,12 +42,14 @@ class Header extends React.Component {
 
 Header.propTypes = {
     isLoggedIn: React.PropTypes.bool,
-    onLogout: React.PropTypes.func
+    onLogout: React.PropTypes.func,
+    usernames: React.PropTypes.array
 };
 
 Header.defaultProps = {
     isLoggedIn: false,
-    onLogout: () => { console.error("logout function not defined");}
+    onLogout: () => { console.error("logout function not defined");},
+    usernames: []
 };
 
 export default Header;

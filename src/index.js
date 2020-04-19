@@ -17,9 +17,10 @@ ReactDOM.render(
     <Provider store={store}>
         <Router history={browserHistory}>
             <Route path="/" component={App}>
-            <IndexRoute component={Home}/>
-            <Route path="login" component={Login}/>
-            <Route path="register" component={Register}/>
+                <IndexRoute component={Home}/>
+                <Route path="home" component={Home}/>
+                <Route path="login" component={Login}/>
+                <Route path="register" component={Register}/>
             </Route>    
         </Router>
     </Provider>, rootElement        

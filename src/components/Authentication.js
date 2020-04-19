@@ -114,6 +114,7 @@ class Authentication extends React.Component {
                 <div className="row">
                     {inputBoxes}
                     <a onClick={this.handleRegister} className="waves-effect waves-light btn">CREATE</a>
+                    <Link to="/" className="waves-effect waves-light btn">CANCLE</Link>
                 </div>
             </div>
         );
