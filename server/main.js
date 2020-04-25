@@ -28,7 +28,8 @@ app.use(bodyParser.json());
 
 db.on('error', console.error);
 db.once('open', () => {console.log('Connection to mongodb server'); });
-mongoose.connect('mongodb://geniepad:geniepad@1.234.198.94:17017/geniepad');
+//mongoose.connect('mongodb://geniepad:geniepad@1.234.198.94:17017/geniepad');
+mongoose.connect('mongodb://geniepad:geniepad@localhost:17017/geniepad');
 
 /*use session */
 app.use(session({

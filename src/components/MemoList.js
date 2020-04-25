@@ -36,7 +36,8 @@ MemoList.propTypes = {
     data: React.PropTypes.array,
     currentUser: React.PropTypes.string,
     onEdit: React.PropTypes.func,
-    onRemove: React.PropTypes.func
+    onRemove: React.PropTypes.func,
+    onStar: React.PropTypes.func
 };
 
 MemoList.defaultProps = {
@@ -48,6 +49,9 @@ MemoList.defaultProps = {
     },
     onRemove: (id, index) => { 
         console.error('remove function not defined'); 
+    },
+    onStar: (id, index) => {
+        console.error('star function not defined');
     }
 };
 
